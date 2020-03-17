@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 # Thanks to https://nbsoftsolutions.com/blog/routing-select-docker-containers-through-wireguard-vpn
 RUN apt-get update -y && \
