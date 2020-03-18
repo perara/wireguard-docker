@@ -18,6 +18,7 @@ RUN cd /app && npm i --production --unsafe-perm
 COPY scripts /scripts
 ENV WG_INTERFACE=wg0
 ENV WG_GUI=false
+WORKDIR /app
 
 ENTRYPOINT ["/scripts/run.sh"]
 CMD []
