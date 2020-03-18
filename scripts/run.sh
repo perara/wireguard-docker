@@ -5,17 +5,13 @@ set -e
 # Install Wireguard. This has to be done dynamically since the kernel
 # module depends on the host kernel version.
 apt update
-apt install -y linux-headers-$(uname -r)
-apt install -y wireguard
+apt install -y linux-headers-$(uname -r) wireguard
 
-# Find a Wireguard interface
-interfaces=`find /etc/wireguard -type f`
-if [[ -z $interfaces ]]; then
-    echo "$(date): Interface not found in /etc/wireguard" >&2
+interface=/etc/wireguard/${WG_INTERFACE}.conf
+if [ ! -f "$interface" ]; then
+    echo "$FILE does not exist"
     exit 1
 fi
-
-interface=`echo $interfaces | head -n 1`
 
 echo "$(date): Starting Wireguard"
 wg-quick up $interface
