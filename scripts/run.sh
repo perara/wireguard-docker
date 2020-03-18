@@ -5,7 +5,7 @@ set -e
 if [ "$WG_GUI" = true ] ; then
     echo 'Starting GUI'
     ls -la
-    /usr/bin/node src/server.js &
+    /usr/bin/node /app/src/server.js &
 
 fi
 
