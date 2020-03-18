@@ -2,6 +2,13 @@
 
 set -e
 
+if [ "$WG_GUI" = true ] ; then
+    echo 'Starting GUI'
+    /usr/bin/node /opt/wg-dashboard/src/server.js &
+
+fi
+
+
 # Install Wireguard. This has to be done dynamically since the kernel
 # module depends on the host kernel version.
 apt update
