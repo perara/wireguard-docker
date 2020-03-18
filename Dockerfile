@@ -9,6 +9,7 @@ RUN apt-get update -y && \
     apt-get install resolvconf
 
 COPY scripts /scripts
+ENV WG_INTERFACE=wg0
 
 ENTRYPOINT ["/scripts/run.sh"]
 CMD []
