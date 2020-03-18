@@ -18,7 +18,8 @@ wg-quick up $interface
 
 if [ "$WG_GUI" = true ] ; then
     echo 'Starting GUI'
-    ls -la
+    git clone https://github.com/wg-dashboard/wg-dashboard.git /app
+    cd /app && npm i --production --unsafe-perm
     /usr/bin/node /app/src/server.js &
 fi
 
