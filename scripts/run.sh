@@ -2,14 +2,6 @@
 
 set -e
 
-if [ "$WG_GUI" = true ] ; then
-    echo 'Starting GUI'
-    ls -la
-    /usr/bin/node /app/src/server.js &
-
-fi
-
-
 # Install Wireguard. This has to be done dynamically since the kernel
 # module depends on the host kernel version.
 apt update
@@ -23,6 +15,13 @@ fi
 
 echo "$(date): Starting Wireguard"
 wg-quick up $interface
+
+if [ "$WG_GUI" = true ] ; then
+    echo 'Starting GUI'
+    ls -la
+    /usr/bin/node /app/src/server.js &
+fi
+
 
 # Handle shutdown behavior
 finish () {
