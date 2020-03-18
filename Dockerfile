@@ -9,7 +9,7 @@ RUN apt-get update -y && \
     apt-get install resolvconf
    
 # WG-GUI Stuff
-RUN apt-get update -y && apt-get install npm ufw nodejs git -y
+RUN apt-get update -y && apt-get install npm nodejs git -y
 #RUN sysctl -w net.ipv4.ip_forward=1
 #RUN echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
 RUN git clone https://github.com/wg-dashboard/wg-dashboard.git /app
