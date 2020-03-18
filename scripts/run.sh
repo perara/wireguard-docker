@@ -4,7 +4,7 @@ set -e
 
 if [ "$WG_GUI" = true ] ; then
     echo 'Starting GUI'
-    /usr/bin/node /app/wg-dashboard/src/server.js &
+    /usr/bin/node src/server.js &
 
 fi
 
