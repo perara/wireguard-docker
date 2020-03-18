@@ -6,7 +6,7 @@ RUN apt-get update -y && \
     echo resolvconf resolvconf/linkify-resolvconf boolean false | debconf-set-selections && \
     echo "REPORT_ABSENT_SYMLINK=no" >> /etc/default/resolvconf && \
     add-apt-repository --yes ppa:wireguard/wireguard && \
-    apt-get install resolvcon
+    apt-get install resolvconf
    
 # WG-GUI Stuff
 RUN apt-get update -y && apt-get install libmnl-dev libelf-dev build-essential ufw nodejs
