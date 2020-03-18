@@ -9,9 +9,9 @@ RUN apt-get update -y && \
     apt-get install resolvconf
    
 # WG-GUI Stuff
-RUN apt-get update -y && apt-get install libmnl-dev libelf-dev build-essential ufw nodejs -y
-RUN sysctl -w net.ipv4.ip_forward=1
-RUN echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
+RUN apt-get update -y && apt-get install libmnl-dev libelf-dev build-essential ufw nodejs git -y
+#RUN sysctl -w net.ipv4.ip_forward=1
+#RUN echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
 RUN git clone https://github.com/wg-dashboard/wg-dashboard.git /app
 RUN cd /app && npm i --production --unsafe-perm
 
