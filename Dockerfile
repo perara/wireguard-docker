@@ -10,11 +10,6 @@ RUN apt-get update -y && \
    
 # WG-GUI Stuff
 RUN apt-get update -y && apt-get install npm nodejs git -y
-#RUN sysctl -w net.ipv4.ip_forward=1
-#RUN echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
-RUN git clone https://github.com/wg-dashboard/wg-dashboard.git /app
-RUN cd /app && npm i --production --unsafe-perm
-
 COPY scripts /scripts
 ENV WG_INTERFACE=wg0
 ENV WG_GUI=false
